@@ -30,14 +30,12 @@ RUN pip3 install awscli --upgrade --user
 
 
 ENV APP_HOME /usr/src/app
-
 WORKDIR /$APP_HOME
-
 COPY . $APP_HOME/
-
+RUN mkdir -p /usr/src/app/Test_Result/
 
 CMD tail -f /dev/null
 
-CMD python3 test_execution_1.py
+CMD python3 Scenario-1.py
 #CMD sh aws_s3_push.sh
 
